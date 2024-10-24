@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.ibb.co/h22Cdg4/58c4989c7096.jpg" type="image/x-icon">
+    <title>PizzaRun - Varieties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9e79f; /* Light background for a warm look */
+            text-align: center;
+        }
+        .head h1 {
+            font-size: 36px;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+        .pizza-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .pizza-card {
+            background-color: #fff;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .pizza-card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .pizza-card h2 {
+            font-size: 24px;
+            color: #d35400;
+            margin: 15px 0;
+        }
+        .pizza-card p {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+        button {
+            border-radius: 15px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; 
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="head">
+        <h1>Hi! Welcome to our varieties!</h1>
+        <h1>Here are our pizza varieties!</h1>
+    </div>
+
+    <div class="pizza-container">
+        <!-- Pizza Card 1 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.SgB8sYIxkxJj-p3Vs8MaCgHaE8?w=208&h=139&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Margherita Pizza">
+            <h2>Margherita Pizza</h2>
+            <p>A classic delight with fresh tomatoes, mozzarella cheese, and basil leaves.</p>
+            <p>Price: Rs.599</p>
+            <button onclick="openModal('Margherita Pizza')">ADD TO CART</button>
+        </div>
+
+        <!-- Pizza Card 2 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.r-hMI4Xcpprcf7CXeuawPQHaLH?w=141&h=211&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Pepperoni Pizza">
+            <h2>Pepperoni Pizza</h2>
+            <p>Loaded with spicy pepperoni slices and mozzarella cheese.</p>
+            <p>Price: Rs.499</p>
+            <button onclick="openModal('Pepperoni Pizza')">ADD TO CART</button>
+        </div>
+
+        <!-- Pizza Card 3 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.vXeDCLn3KutPlmgBwkfwAQHaLL?w=203&h=307&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BBQ Chicken Pizza">
+            <h2>BBQ Chicken Pizza</h2>
+            <p>Smoky BBQ sauce, grilled chicken, and melted cheese for a bold flavor.</p>
+            <p>Price: Rs.600</p>
+            <button onclick="openModal('BBQ Chicken Pizza')">ADD TO CART</button>
+        </div>
+
+        <!-- Pizza Card 4 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.2yAaYaMeYIH345yBGYlz6AHaE7?w=251&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Hawaiian Pizza">
+            <h2>Hawaiian Pizza</h2>
+            <p>Sweet and savory with ham and juicy pineapple chunks.</p>
+            <p>Price: Rs.399</p>
+            <button onclick="openModal('Hawaiian Pizza')">ADD TO CART</button>
+        </div>
+
+        <!-- Pizza Card 5 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.RyF12CjDGrG3YngqLLEc2gHaHa?w=208&h=208&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Veggie Pizza">
+            <h2>Veggie Pizza</h2>
+            <p>Fresh vegetables like bell peppers, mushrooms, and onions for a healthy bite.</p>
+            <p>Price: Rs.299</p>
+            <button onclick="openModal('Veggie Pizza')">ADD TO CART</button>
+        </div>
+
+        <!-- Pizza Card 6 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.2pD2CRacYTXwsDtpvb22pAHaFj?w=252&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Four Cheese Pizza">
+            <h2>Four Cheese Pizza</h2>
+            <p>A cheese lover’s dream with a blend of mozzarella, parmesan, gorgonzola, and ricotta.</p>
+            <p>Price: Rs.359</p>
+            <button onclick="openModal('Four Cheese Pizza')">ADD TO CART</button>
+        </div>
+
+        <!-- Pizza Card 7 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.GE-wnPvyNKMyxK1TSqbwAgHaHa?w=196&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Meat Lovers Pizza">
+            <h2>Meat Lovers Pizza</h2>
+            <p>Loaded with sausage, pepperoni, ham, bacon, and beef for a protein-packed punch.</p>
+            <p>Price: Rs.699</p>
+            <button onclick="openModal('Meat Lovers Pizza')">ADD TO CART</button>
+        </div>
+
+        <!-- Pizza Card 8 -->
+        <div class="pizza-card">
+            <img src="https://th.bing.com/th/id/OIP.49u_3Toj3IM5KZg3KgKc0AHaH5?w=208&h=222&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Buffalo Chicken Pizza">
+            <h2>Buffalo Chicken Pizza</h2>
+            <p>Spicy buffalo sauce, grilled chicken, and drizzled ranch dressing for a tangy twist.</p>
+            <p>Price: Rs.599</p>
+            <button onclick="openModal('Buffalo Chicken Pizza')">ADD TO CART</button>
+        </div>
+
+       
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Order Your Pizza</h2>
+            <p id="pizzaName"></p>
+            <input type="text" id="customerName" placeholder="Your Name" required>
+            <input type="number" id="customerPhone" placeholder="Your Phone Number" required>
+            <input type="text" id="customerAddress" placeholder="Your Address" required>
+            <button onclick="submitOrder()">Submit Order</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(pizzaName) {
+           
+            document.getElementById("pizzaName").textContent = "You are ordering: " + pizzaName;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function submitOrder(){
+            var name = document.getElementById('customerName').value;
+            var phone = document.getElementById('customerPhone').value;
+            var add = document.getElementById('customerAddress').value; 
+            if(name && phone && add){
+                alert("order placed successfully")
+            } else {
+                alert("fill all the fields")
+            }
+        }
+
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
